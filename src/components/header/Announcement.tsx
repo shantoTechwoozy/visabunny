@@ -4,7 +4,7 @@ import { MdPhone, MdLocationOn, MdLanguage } from 'react-icons/md';
 
 const Announcement = () => {
     return (
-        <div className="bg-white px-4 py-3 text-sky-600 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <div className="bg-white px-4 py-3 hidden text-sky-600 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8">
             {/* Content Section */}
             <div className="flex flex-wrap items-center space-x-4 text-sm font-medium">
                 {/* Address 1 */}
@@ -40,17 +40,17 @@ const Announcement = () => {
             {/* Social Icons Section */}
             <div className="mt-4 flex space-x-3 sm:mt-0">
                 <Link href="#" className="hover:text-gray-300">
-                    <FaFacebook size={25} className="text-blue-600" />
+                    <FaFacebook size={30} className="text-blue-600 sm:size-25" />
                 </Link>
                 <Link href="#" className="hover:text-gray-300">
-                    <FaInstagram size={25} className="text-pink-600" />
+                    <FaInstagram size={30} className="text-pink-600 sm:size-25" />
                 </Link>
                 <Link href="#" className="hover:text-gray-300">
-                    <FaWhatsapp size={25} className="text-green-600" />
+                    <FaWhatsapp size={30} className="text-green-600 sm:size-25" />
                 </Link>
                 {/* Chat icon */}
                 <Link href="#" className="hover:text-gray-300">
-                    <FaComments size={25} className="text-orange-500" />
+                    <FaComments size={30} className="text-orange-500 sm:size-25" />
                 </Link>
             </div>
         </div>
