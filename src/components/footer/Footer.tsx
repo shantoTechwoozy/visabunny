@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { visaServices, companyInfo, helpfulLinks, legalLinks } from './footerData';
-import { FaPhoneAlt, FaMapMarkerAlt, FaGlobe } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt, FaGlobe, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const FooterSection: React.FC<{ section: { title: string; links: { href: string; text: string }[] } }> = ({ section }) => (
     <div>
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
 
                             {/* Contact Section */}
                             <section className="mt-8 text-start">
-                                <h3 className="text-xl ffont-medium text-gray-900">Contact Us:</h3>
+                                <h3 className="text-xl font-medium text-gray-900">Contact Us:</h3>
                                 <p className="flex items-center text-gray-500 mb-4">
                                     <FaMapMarkerAlt className="mr-2 text-red-500" />
                                     House no GA-36, Shahjadpur, Gulshan, Dhaka, Bangladesh 1212
@@ -104,6 +104,19 @@ const Footer: React.FC = () => {
                             </ul>
 
                             <p className="mt-8 text-xs text-gray-500">&copy; 2024. Visa Bunny. All rights reserved.</p>
+
+                            {/* Social Icons Section */}
+                            <div className="mt-4 flex space-x-4">
+                                <Link href="https://www.facebook.com" className="hover:text-gray-600">
+                                    <FaFacebook size={20} className="text-blue-600" />
+                                </Link>
+                                <Link href="https://www.instagram.com" className="hover:text-gray-600">
+                                    <FaInstagram size={20} className="text-pink-600" />
+                                </Link>
+                                <Link href="https://www.twitter.com" className="hover:text-gray-600">
+                                    <FaTwitter size={20} className="text-blue-400" />
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

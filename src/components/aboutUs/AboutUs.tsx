@@ -10,8 +10,8 @@ const AboutUs = () => {
                     {/* Text Content */}
                     <div className="bg-white p-8 md:p-12 lg:px-16 lg:py-8">
                         <div className="max-w-xl">
-                            <h2 className="text-2xl font-bold text-gray-900 md:text-3xl text-left">
-                                About VisaBunny.com
+                            <h2 className="text-2xl font-bold text-sky-500 md:text-3xl text-left">
+                                The Journey Of VisaBunny
                             </h2>
                             <p className="text-gray-700 mt-4">
                                 {` At VisaBunny, we specialize in making the visa process easy and accessible for everyone. Whether you're a student looking to study abroad or a traveler planning your next adventure, our team is here to provide personalized and reliable services.`}

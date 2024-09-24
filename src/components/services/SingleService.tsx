@@ -1,85 +1,149 @@
+import { nanoid } from 'nanoid';
+import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
 import { BiSupport } from 'react-icons/bi';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { GiGraduateCap } from 'react-icons/gi';
 import { MdAccessTime, MdSchool } from 'react-icons/md';
+import { images } from '../../utils/images';
+
+const services = [
+    {
+        title: "Visa Types",
+        description: "Assistance with various visa types, ensuring a smooth application process.",
+        icon: <BiSupport className="text-blue-500" />,
+    },
+    {
+        title: "High Success Rate",
+        description: "Over 100% visa approval for worldwide applications.",
+        icon: <AiFillStar className="text-yellow-500" />,
+    },
+    {
+        title: "Comprehensive Support",
+        description: "From application to accommodation assistance.",
+        icon: <MdAccessTime className="text-blue-500" />,
+    },
+    {
+        title: "Personalized Guidance",
+        description: "Tailored advice for every visa type.",
+        icon: <MdSchool className="text-green-500" />,
+    },
+    {
+        title: "Job Placement Assistance",
+        description: "Helping you find part-time job opportunities while studying.",
+        icon: <FaPhoneAlt className="text-purple-500" />,
+    },
+    {
+        title: "Scholarship Opportunities",
+        description: "Information on scholarships available for international students.",
+        icon: <GiGraduateCap className="text-red-500" />,
+    },
+    {
+        title: "Pre-Departure Support",
+        description: "Guidance on travel preparations and cultural orientation.",
+        icon: <MdAccessTime className="text-teal-500" />,
+    },
+    {
+        title: "Post-Departure Assistance",
+        description: "Help with settling in and finding accommodation.",
+        icon: <AiFillStar className="text-yellow-500" />,
+    },
+];
+
+// This array now contains just the flags for the countries using the images from the imported images object.
+const countryFlags = [
+    { name: "USA", flag: images.usaFlag },
+    { name: "Canada", flag: images.canadaFlag },
+    { name: "Australia", flag: images.australiaFlag },
+    { name: "UK", flag: images.ukFlag },
+    { name: "Germany", flag: images.germanyFlag },
+    { name: "Sweden", flag: images.swedenFlag },
+    { name: "Finland", flag: images.finlandFlag },
+    { name: "Denmark", flag: images.denmarkFlag },
+    { name: "Malaysia", flag: images.malaysiaFlag },
+    { name: "Vietnam", flag: images.vietnamFlag },
+    { name: "Dubai", flag: images.dubaiFlag },
+];
 
 const SingleService = () => {
     return (
         <div className="p-5 max-w-full mx-auto bg-white shadow-lg">
-            <h1 className="text-3xl bg-sky-400 text-center font-bold mb-6 px-8 py-8 text-white">STUDY ABROAD WITH EASE!</h1>
+            {/* Header Section with Blurry Background */}
+            <div className="relative overflow-hidden h-72 mb-8">
+                <Image
+                    src="/service/b.jpg" // Adjust the path as needed
+                    alt="Background Image"
+                    layout="fill"
+                    objectFit="cover"
+                    className="absolute inset-0"
+                />
+                <div className="absolute inset-0 bg-black opacity-40"></div> {/* Opacity Overlay */}
+                <h1 className="text-4xl text-white relative font-bold text-center flex items-center justify-center h-full z-10">
+                    STUDY ABROAD WITH EASE!
+                </h1>
+            </div>
 
-            <section className="mb-8">
+            <section className="mb-8 text-center">
                 <h2 className="text-2xl font-semibold text-black mb-4">Secure Your Future with Our Student Visa Services</h2>
-                <p className="text-gray-700 mb-4">MOI accepted, no service fee required!</p>
-                <div className="flex items-center mb-4">
+                <p className="text-gray-800 mb-4">MOI accepted, no service fee required!</p>
+                <div className="flex justify-center items-center mb-4">
                     <FaPhoneAlt className="text-blue-500 mr-2" />
                     <span className="font-semibold text-black">CALL NOW: <span className="text-blue-600">09613 821515</span></span>
                 </div>
             </section>
 
-            <section className="mb-8">
-                <h2 className="text-2xl font-semibold text-black mb-4">Why Choose Us?</h2>
-                <ul className="list-disc text-slate-600 list-inside space-y-2">
-                    <li className="flex items-center"><AiFillStar className="text-yellow-500 mr-2" /><strong>High Success Rate:</strong> Over 93% visa approval for the USA and Canada.</li>
-                    <li className="flex items-center"><MdAccessTime className="text-blue-500 mr-2" /><strong>End-to-End Support:</strong> Comprehensive assistance from application to visa approval.</li>
-                    <li className="flex items-center"><MdSchool className="text-green-500 mr-2" /><strong>Personalized Guidance:</strong> Tailored advice to align with your educational goals.</li>
-                </ul>
-                <p className="mt-4 font-bold text-green-600">GET A FREE CONSULTATION IF YOU SIGN UP THIS MONTH!</p>
+            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                {services.map((service) => (
+                    <div key={nanoid()} className="bg-gray-100 rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
+                        <div className="text-4xl mb-4">{service.icon}</div>
+                        <h3 className="text-xl font-semibold mb-2 text-black">{service.title}</h3>
+                        <p className="text-gray-700">{service.description}</p>
+                    </div>
+                ))}
             </section>
 
             <section className="mb-8">
                 <h2 className="text-2xl font-semibold text-black mb-4">Unlock Study Opportunities In The USA!</h2>
-                <p className="text-gray-700 mb-4">{`Visabunny.com is your trusted partner, providing complete guidance and support for pursuing your Bachelors, Master's, or PhD degree in the USA, turning your dream into reality.`}</p>
-                <h3 className="text-xl font-semibold text-black mb-4">Discover Why Studying In The USA Offers Unparalleled Opportunities:</h3>
-                <ul className="list-disc text-slate-600 list-inside space-y-2">
-                    <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />5-year multiple entry visa</li>
-                    <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />Prestigious and globally recognized universities</li>
-                    <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />Low/reasonable tuition fees</li>
-                    <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />Scholarship opportunities up to 80%</li>
-                    <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />Bring your spouse and kids</li>
-                    <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />Career advancement and networking</li>
-                    <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />OPT/Permanent residency after study</li>
-                </ul>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                        <h3 className="text-xl font-semibold text-black mb-4">Discover Why Studying In The USA Offers Unparalleled Opportunities:</h3>
+                        <ul className="list-disc text-slate-600 list-inside space-y-2">
+                            <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />5-year multiple entry visa</li>
+                            <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />Prestigious and globally recognized universities</li>
+                            <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />Low/reasonable tuition fees</li>
+                            <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />Scholarship opportunities up to 80%</li>
+                            <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />Bring your spouse and kids</li>
+                            <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />Career advancement and networking</li>
+                            <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />OPT/Permanent residency after study</li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                        <h3 className="text-xl font-semibold text-black mb-4">Our Services:</h3>
+                        <ul className="list-disc text-slate-600 list-inside space-y-2">
+                            <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Support in finding part-time job opportunities.</li>
+                            <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Secure your I-20 in just 7 days.</li>
+                            <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Assistance in finding suitable accommodation.</li>
+                            <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Expert guidance on selecting the right course.</li>
+                            <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Comprehensive support with the visa application (DS-160) process.</li>
+                            <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Pre-departure session and post-departure facilities.</li>
+                            <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Ticket booking assistance.</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
-            <section className="mb-8">
-                <h2 className="text-2xl font-semibold text-black mb-4">Key Points:</h2>
-                <ul className="list-disc text-slate-600 list-inside space-y-2">
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Apply with MOI, no IELTS required.</li>
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Accept low CGPA.</li>
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Guaranteed admission.</li>
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Affordable tuition fees and scholarship opportunities.</li>
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Student loan support available at a low cost.</li>
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />No service fee before visa approval.</li>
-                </ul>
-            </section>
-
-            <section className="mb-8">
-                <h2 className="text-2xl font-semibold text-black mb-4">Fast-track Your Canadian Academic Journey!</h2>
-                <p className="text-slate-600 mb-4">Streamline your visa application, so you can focus on achieving your educational goals in Canada.</p>
-                <h3 className="text-xl font-semibold text-black mb-4">Higher Education in Canada:</h3>
-                <ul className="list-disc text-slate-600 list-inside space-y-2">
-                    <li className="flex items-center"><MdSchool className="text-green-500 mr-2" />Apply with IELTS/MOI/Duolingo/PTE.</li>
-                    <li className="flex items-center"><MdSchool className="text-green-500 mr-2" />Comprehensive support services available.</li>
-                    <li className="flex items-center"><MdSchool className="text-green-500 mr-2" />Eligibility Check: Assess your eligibility for admission based on your qualifications.</li>
-                    <li className="flex items-center"><MdSchool className="text-green-500 mr-2" />Scholarship Search: Identify scholarships that align with your profile.</li>
-                    <li className="flex items-center"><MdSchool className="text-green-500 mr-2" />Admission Guidance: Step-by-step guidance throughout the admission process.</li>
-                    <li className="flex items-center"><MdSchool className="text-green-500 mr-2" />Free Counseling: Schedule a consultation with our experienced counselors from anywhere.</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2 className="text-2xl font-semibold text-black mb-4">Our Services:</h2>
-                <ul className="list-disc text-slate-600 list-inside space-y-2">
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Support in finding part-time job opportunities.</li>
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Secure your I-20 in just 7 days.</li>
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Assistance in finding suitable accommodation.</li>
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Expert guidance on selecting the right course.</li>
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Comprehensive support with the visa application (DS-160) process.</li>
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Pre-departure session and post-departure facilities.</li>
-                    <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Ticket booking assistance.</li>
-                </ul>
+            {/* Countries Section with Flags */}
+            <section className="mt-8 mb-8">
+                <h2 className="text-2xl font-semibold text-black mb-4">Available Visa Services by Country:</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {countryFlags.map(({ name, flag }) => (
+                        <div key={nanoid()} className="bg-gray-100 rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 hover:shadow-lg duration-300 flex items-center">
+                            <Image src={flag} alt={`${name} Flag`} width={50} height={35} className="mr-3" />
+                            <h3 className="text-xl font-semibold text-black">{name}</h3>
+                        </div>
+                    ))}
+                </div>
             </section>
         </div>
     );

@@ -10,19 +10,20 @@ type MenuItem = {
 };
 
 const menuItems: MenuItem[] = [
-    { label: 'About', href: '/about' },
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about' },
     { label: 'Service', href: '/service' },
-    { label: 'Study in USA', href: '#' },
-    { label: 'Success Stories', href: '/success-story' },
+    { label: 'Eligibility Check', href: '/' },
+    { label: 'Study Abroad', href: '#' },
+    // { label: 'Success Stories', href: '/success-story' },
     { label: 'Latest News', href: '/latest-news' },
-    { label: 'Blog', href: '/visa-blogs' },
 ];
 
 export default function Header() {
-    const [isMenuOpen, setMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
-        setMenuOpen(!isMenuOpen);
+        setIsMenuOpen(!isMenuOpen);
     };
 
     return (
