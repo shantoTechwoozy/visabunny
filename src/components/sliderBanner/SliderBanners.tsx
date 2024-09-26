@@ -8,8 +8,9 @@ const SliderBanners = () => {
             <Image
                 src={images.banner1}// Ensure this path is correct
                 alt="Banner Image"
-                priority // Ensures the image is prioritized for loading
-                className="rounded-lg min-w-full h-full object-cover object-center" // Add rounded corners
+                layout="fill"
+                objectFit="contain"
+                className="absolute w-full h-full inset-0"
             />
         </div>
     );

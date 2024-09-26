@@ -69,18 +69,14 @@ const SingleService = () => {
     return (
         <div className="p-5 max-w-full mx-auto bg-white shadow-lg">
             {/* Header Section with Blurry Background */}
-            <div className="relative overflow-hidden h-72 mb-8">
+            <div className="relative min-w-full h-64 md:h-[650px] overflow-hidden">
                 <Image
-                    src="/service/b.jpg" // Adjust the path as needed
-                    alt="Background Image"
+                    src="/service/service.png"
+                    alt="Banner Image"
                     layout="fill"
-                    objectFit="cover"
-                    className="absolute inset-0"
+                    objectFit="contain"
+                    className="absolute w-full h-full inset-0"
                 />
-                <div className="absolute inset-0 bg-black opacity-40"></div> {/* Opacity Overlay */}
-                <h1 className="text-4xl text-white relative font-bold text-center flex items-center justify-center h-full z-10">
-                    STUDY ABROAD WITH EASE!
-                </h1>
             </div>
 
             <section className="mb-8 text-center">
