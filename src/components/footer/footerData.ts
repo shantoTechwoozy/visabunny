@@ -48,14 +48,17 @@ export const legalLinks = [
 // footerData.ts
 
 export const studentVisaServices1: FooterSection = {
-    title: 'Student Visa Services',
+    title: 'Visa Services',
     links: [
-        { href: '#', text: 'High Success Rate: Over 93% Visa Approval' },
-        { href: '#', text: 'End-to-End Support' },
-        { href: '#', text: 'Personalized Guidance' },
-        { href: '#', text: 'Free Consultation if You Sign Up This Month!' },
+        { href: '/student-visa', text: 'Student Visa' },
+        { href: '/tourist-visa', text: 'Tourist Visa' },
+        { href: '/visit-visa', text: 'Visit Visa' },
+        { href: '/worker-visa', text: 'Worker Visa' },
+        { href: '/permanent-visa', text: 'Permanent Visa' },
+        { href: '/immigrant-visa', text: 'Immigrant Visa' },
     ],
 };
+
 
 export const studentVisaServices2: FooterSection = {
     title: 'Student Visa Services',

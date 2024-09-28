@@ -15,7 +15,6 @@ const menuItems: MenuItem[] = [
     { label: 'Service', href: '/service' },
     { label: 'Eligibility Check', href: '/' },
     { label: 'Study Abroad', href: '#' },
-    // { label: 'Success Stories', href: '/success-story' },
     { label: 'Latest News', href: '/latest-news' },
 ];
 
@@ -27,7 +26,7 @@ export default function Header() {
     };
 
     return (
-        <header className="bg-white lg:p-5">
+        <header className="bg-white pt-16"> {/* Added padding-top */}
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex-1 md:flex md:items-center md:gap-12">
@@ -95,7 +94,6 @@ export default function Header() {
 
             {/* Mobile menu */}
             <div className={`fixed inset-0 z-50 bg-white transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
-
                 <div className="flex flex-row justify-between p-4">
                     <button
                         className="text-gray-600"
@@ -113,9 +111,9 @@ export default function Header() {
                         </svg>
                     </button>
                 </div>
-                <h2 className="text-slate-500 text-md font-bold  p-4">MENU</h2>
-                <nav aria-label="Mobile" className="px-4 ">
-                    <ul className="space-y-4 text-sm ">
+                <h2 className="text-slate-500 text-md font-bold p-4">MENU</h2>
+                <nav aria-label="Mobile" className="px-4">
+                    <ul className="space-y-4 text-sm">
                         {menuItems.map((item) => (
                             <li key={item.label}>
                                 <a className="text-sky-400 font-bold transition hover:text-gray-500/75" href={item.href}>
@@ -124,8 +122,6 @@ export default function Header() {
                             </li>
                         ))}
                     </ul>
-
-
                 </nav>
             </div>
         </header>

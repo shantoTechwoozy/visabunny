@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { visaServices, companyInfo, helpfulLinks, legalLinks } from './footerData';
-import { FaPhoneAlt, FaMapMarkerAlt, FaGlobe, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { visaServices, companyInfo, helpfulLinks, legalLinks, studentVisaServices1, studentVisaServices2 } from './footerData';
+import { FaPhoneAlt, FaMapMarkerAlt, FaGlobe, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 const FooterSection: React.FC<{ section: { title: string; links: { href: string; text: string }[] } }> = ({ section }) => (
     <div>
@@ -87,9 +87,9 @@ const Footer: React.FC = () => {
                         </div>
 
                         <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3">
-                            <FooterSection section={visaServices} />
+                            <FooterSection section={studentVisaServices1} />
+                            <FooterSection section={studentVisaServices2} />
                             <FooterSection section={companyInfo} />
-                            <FooterSection section={helpfulLinks} />
                         </div>
 
                         <div className="mt-8 border-t border-gray-100 pt-8">
@@ -115,6 +115,9 @@ const Footer: React.FC = () => {
                                 </Link>
                                 <Link href="https://www.twitter.com" className="hover:text-gray-600">
                                     <FaTwitter size={20} className="text-blue-400" />
+                                </Link>
+                                <Link href="https://www.linkedin.com" className="hover:text-gray-600">
+                                    <FaLinkedin size={20} className="text-blue-700" />
                                 </Link>
                             </div>
                         </div>
