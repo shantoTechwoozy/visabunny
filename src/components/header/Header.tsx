@@ -62,7 +62,7 @@ export default function Header() {
                                     </SignedIn>
                                     <SignedOut>
                                         <SignInButton mode="modal">
-                                            <button className="hidden md:inline-block rounded-lg bg-primary py-3 px-7 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-90">
+                                            <button className="hidden md:inline-block rounded-full bg-sky-500 py-3 px-7 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-90">
                                                 Sign In
                                             </button>
                                         </SignInButton>

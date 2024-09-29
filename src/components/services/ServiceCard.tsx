@@ -1,9 +1,38 @@
 "use client";
-import { nanoid } from 'nanoid';
-import React from 'react';
-import { ServiceData } from './ServiceData';
+import React from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { nanoid } from "nanoid";
+import { ServiceData } from "./ServiceData";
 
 const ServiceCard: React.FC = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section id="services" className="py-8 bg-white sm:py-10 lg:py-12 overflow-hidden">
       <div className="px-4 w-full sm:px-6 lg:px-8">
@@ -16,22 +45,26 @@ const ServiceCard: React.FC = () => {
           </p>
         </div>
 
-        {/* Directly using a flex container for the cards */}
-        <div className="flex flex-wrap justify-center mt-10">
-          {ServiceData.map((service) => (
-            <div
-              key={nanoid()}
-              className="flex flex-col items-center p-4 bg-white"
-              style={{ minWidth: '200px', maxWidth: '250px' }} // Set smaller min and max width
-            >
-              <div className={`w-12 h-12 rounded-full ${service.bgColor} flex justify-center items-center`}>
-                {service.icon}
+        <div className="mt-10 max-w-[90vw]">
+          <Slider {...settings}>
+            {ServiceData.map((service) => (
+              <div key={nanoid()} className="p-4">
+                <div className="flex flex-col items-center bg-white rounded-lg  p-6">
+                  <div className={`w-12 h-12 rounded-full ${service.bgColor} flex justify-center items-center`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-gray-800 text-center">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-600 text-center leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </div>
-              <h3 className="mt-2 text-lg font-semibold text-gray-800 text-center">{service.title}</h3>
-              <p className="mt-2 text-sm text-gray-600 text-center leading-relaxed">{service.description}</p>
-            </div>
-          ))}
+            ))}
+          </Slider>
         </div>
+
       </div>
     </section>
   );
