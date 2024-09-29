@@ -1,8 +1,7 @@
 'use client';
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
-import { ClerkLoaded } from '@clerk/nextjs';
 import Image from 'next/image';
 import { useState } from 'react';
+import Auth from './Auth';
 
 type MenuItem = {
     label: string;
@@ -56,18 +55,7 @@ export default function Header() {
 
                         <div className="flex items-center gap-4">
                             <div className="sm:flex hidden sm:gap-4 bg-sky-500 rounded-full">
-                                <ClerkLoaded>
-                                    <SignedIn>
-                                        <UserButton />
-                                    </SignedIn>
-                                    <SignedOut>
-                                        <SignInButton mode="modal">
-                                            <button className="hidden md:inline-block rounded-full bg-sky-500 py-3 px-7 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-opacity-90">
-                                                Sign In
-                                            </button>
-                                        </SignInButton>
-                                    </SignedOut>
-                                </ClerkLoaded>
+                                <Auth />
                             </div>
                         </div>
 
