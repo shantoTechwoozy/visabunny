@@ -20,7 +20,7 @@ import uk from "../../public/about/4.webp";
 import denmark from "../../public/about/5.webp";
 import sweden from "../../public/about/6.webp";
 import finland from "../../public/about/7.webp";   // Dubai wallpaper
-
+import aboutBanner from "../../public/about/about.png"
 export const images = {
     banner1,    // Banner image
     // Flag icons
@@ -45,4 +45,5 @@ export const images = {
     denmark,
     sweden,
     finland,
+    aboutBanner
 };

@@ -25,27 +25,27 @@ export default function Header() {
     };
 
     return (
-        <header className="bg-white pt-16"> {/* Added padding-top */}
+        <header className="bg-white shadow-md sticky top-0 z-50"> {/* Sticky header with shadow */}
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-                <div className="flex h-16 items-center justify-between">
-                    <div className="flex-1 md:flex md:items-center md:gap-12">
-                        <a className="block text-sky-600" href="/">
+                <div className="flex items-center justify-between h-20"> {/* Increased height */}
+                    <div className="flex items-center gap-4">
+                        <a href="/" className="block">
                             <Image
                                 src="/header/logo.png"
                                 alt="Logo"
                                 width={150}
                                 height={90}
-                                className="inset-0 lg:h-full lg:w-full object-cover"
+                                className="object-contain"
                             />
                         </a>
                     </div>
 
-                    <div className="md:flex md:items-center md:gap-12 lg:mt-8">
-                        <nav aria-label="Global" className="hidden md:block">
+                    <div className="hidden md:flex md:items-center md:gap-12">
+                        <nav aria-label="Global">
                             <ul className="flex items-center gap-6 text-sm">
                                 {menuItems.map((item) => (
                                     <li key={item.label}>
-                                        <a className="text-gray-500 text-md transition font-bold hover:text-gray-600/75" href={item.href}>
+                                        <a className="text-gray-600 text-md font-medium transition hover:text-sky-600" href={item.href}>
                                             {item.label}
                                         </a>
                                     </li>
@@ -53,29 +53,29 @@ export default function Header() {
                             </ul>
                         </nav>
 
-                        <div className="flex items-center gap-4">
+                        <div className="flex items-center">
                             <div className="sm:flex hidden sm:gap-4 bg-sky-500 rounded-full">
                                 <Auth />
                             </div>
                         </div>
+                    </div>
 
-                        <div className="block md:hidden">
-                            <button
-                                className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
-                                onClick={toggleMenu}
+                    <div className="block md:hidden">
+                        <button
+                            className="rounded p-2 text-gray-600 transition hover:text-gray-800"
+                            onClick={toggleMenu}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth="2"
                             >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="size-5"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                            </button>
-                        </div>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -83,13 +83,10 @@ export default function Header() {
             {/* Mobile menu */}
             <div className={`fixed inset-0 z-50 bg-white transition-transform transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
                 <div className="flex flex-row justify-between p-4">
-                    <button
-                        className="text-gray-600"
-                        onClick={toggleMenu}
-                    >
+                    <button className="text-gray-600" onClick={toggleMenu}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="size-5"
+                            className="h-5 w-5"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -104,7 +101,7 @@ export default function Header() {
                     <ul className="space-y-4 text-sm">
                         {menuItems.map((item) => (
                             <li key={item.label}>
-                                <a className="text-sky-400 font-bold transition hover:text-gray-500/75" href={item.href}>
+                                <a className="text-sky-500 font-bold transition hover:text-gray-600" href={item.href}>
                                     {item.label}
                                 </a>
                             </li>

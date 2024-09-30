@@ -1,55 +1,83 @@
+import { images } from '@/utils/images';
 import Image from 'next/image';
-import { FaHeadset, FaLock, FaPlane, FaUserShield } from 'react-icons/fa';
+import { FaPlane, FaLock, FaUserShield, FaHeadset } from 'react-icons/fa';
 import { MdOutlineAttachMoney } from 'react-icons/md';
 
 const About = () => {
   return (
     <div className="bg-gray-100 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-      <div className="relative min-w-full h-64 md:h-[650px] overflow-hidden">
-        <Image
-          src="/about/about.png" // Adjust the path as needed
-          alt="Background Image"
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 w-full h-full"
-        />
+      {/* About Section */}
+      <div className="sm:flex items-center max-w-screen-xl mx-auto mb-12">
+        <div className="sm:w-1/2 p-10">
+          <div className="image object-center text-center">
+            <Image
+              src={images.aboutBanner}
+              alt="Background Image"
+              layout="responsive"
+              width={700}
+              height={475}
+              className="rounded-md"
+            />
+          </div>
+        </div>
+        <div className="sm:w-1/2 p-5">
+          <div className="text">
+            <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">
+              About Us
+            </span>
+            <h2 className="my-4 font-bold text-3xl sm:text-4xl">
+              STUDY ABROAD<span className="text-indigo-600"> WITH EASE!</span>
+            </h2>
+            <p className="text-gray-700">
+              {`Visa Bunny is a renowned visa consulting company committed to assisting people and families in navigating the challenging world of international migration. We offer thorough, knowledgeable solutions to match your demands, regardless of the kind of immigration process you're pursuing.`}
+            </p>
+            <p className="text-gray-700 mt-4">
+              By working with Visa Bunny, you can be sure that every stage of your trip will be managed with the highest level of skill and attention.
+            </p>
+          </div>
+        </div>
       </div>
 
-      {/* Visa Bunny Description */}
-      <section className="mb-12 mt-12 text-center">
-        <h3 className="text-xl text-gray-800 font-semibold">Bringing Visions to Reality Worldwide</h3>
-        <p className="mt-4 text-gray-600">
-          {`Visa Bunny is a renowned visa consulting company committed to assisting people and families in navigating the challenging world of international migration. We offer thorough, knowledgeable solutions to match your demands, regardless of the kind of immigration process you're pursuing. Since our founding, we have developed into a dependable global partner for our clients, providing knowledgeable assistance at each stage of the procedure, from choosing the appropriate visa category to submitting an application with success.`}
-        </p>
-        <p className="mt-4 text-gray-600">
-          By working with Visa Bunny, you can be sure that every stage of your trip will be managed with the highest level of skill and attention. Your trusted partner will confidently navigate the visa complexity of the worldwide environment.
-        </p>
+      {/* Visa Bunny Description and Process Overview */}
+      <section className="max-w-3xl mx-auto mb-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* Bringing Visions to Reality Worldwide Card */}
+        <div className="bg-white shadow rounded-lg p-6 text-center">
+          <h3 className="text-xl text-gray-800 font-semibold">
+            Bringing Visions to Reality Worldwide
+          </h3>
+          <p className="mt-4 text-gray-600">
+            Visa Bunny is a dependable global partner for our clients, offering knowledgeable assistance at every stage of the process, from choosing the appropriate visa category to successfully submitting your application.
+          </p>
+        </div>
+
+        {/* Visa Bunny Process Overview Card */}
+        <div className="bg-white shadow rounded-lg p-6 text-center">
+          <h3 className="text-xl text-gray-800 font-semibold">
+            Visa Bunny Process Overview
+          </h3>
+          <p className="mt-4 text-gray-600">
+            We provide comprehensive help with visa applications, which includes document preparation, interview coaching, and legal documentation from immigration lawyers. Our expert team ensures your visa application stands out, improving your chances of approval.
+          </p>
+        </div>
       </section>
 
-      {/* Process Overview */}
-      <section className="mb-12 text-center">
-        <h3 className="text-xl text-gray-800 font-semibold">Visa Bunny Process Overview</h3>
-        <p className="mt-4 text-gray-600">
-          Your Key to International Opportunities
-        </p>
-        <p className="mt-2 text-gray-600">
-          We provide comprehensive help with visa applications, which includes document preparation, interview coaching, and legal documentation from immigration lawyers. Our team of experts makes sure that your visa application is unique, which improves and stands out, increasing your chances of approval.
-        </p>
+      {/* Why Choose Us Section */}
+      <section className="max-w-3xl mx-auto mb-12">
+        <div className="bg-white shadow rounded-lg p-6 text-center">
+          <h3 className="text-xl text-gray-800 font-semibold">Why Choose Us?</h3>
+          <ul className="list-disc list-inside text-gray-600 mx-auto max-w-2xl mb-4">
+            <li>High Success Rate: Over 93% visa approval for the USA and Canada.</li>
+            <li>End-to-End Support: Comprehensive assistance from application to visa approval.</li>
+            <li>Personalized Guidance: Tailored advice to align with your educational goals.</li>
+          </ul>
+          <p className="text-lg font-bold text-green-600">
+            GET A FREE CONSULTATION IF YOU SIGN UP THIS MONTH!
+          </p>
+        </div>
       </section>
 
-      {/* Why Choose Us? */}
-      <section className="mb-12">
-        <h3 className="text-xl text-gray-800 font-semibold text-center">Why Choose Us?</h3>
-        <ul className="list-disc list-inside text-gray-600 mx-auto max-w-2xl mb-4">
-          <li>High Success Rate: Over 93% visa approval for the USA and Canada.</li>
-          <li>End-to-End Support: Comprehensive assistance from application to visa approval.</li>
-          <li>Personalized Guidance: Tailored advice to align with your educational goals.</li>
-        </ul>
-        <p className="text-lg font-bold text-green-600 text-center">GET A FREE CONSULTATION IF YOU SIGN UP THIS MONTH!</p>
-      </section>
-
-      {/* Service Highlights */}
-      <section className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      {/* Service Highlights Section */}
+      <section className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <div className="bg-white shadow rounded-lg p-6 text-center">
           <FaPlane className="text-4xl text-blue-500 mx-auto mb-4" />
           <h2 className="text-2xl font-semibold text-gray-900">Easy Travel</h2>
@@ -90,21 +118,7 @@ const About = () => {
           </p>
         </div>
       </section>
-
-      {/* Footer Section */}
-      <footer className="text-center mt-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">STUDY ABROAD WITH EASE!</h2>
-        <p className="text-lg text-gray-600 mb-4">Secure Your Future with Our Student Visa Services</p>
-        <p className="text-lg text-gray-600 mb-4">MOI Accepted, No Service Fee Required</p>
-        <div className="mb-4">
-          <p className="text-sm font-bold text-gray-900">CALL NOW</p>
-          <a href="tel:09613821515" className="text-lg font-semibold text-green-600">
-            09613 821515
-          </a>
-        </div>
-      </footer>
     </div>
-
   );
 };
 

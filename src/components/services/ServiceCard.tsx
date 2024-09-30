@@ -49,8 +49,9 @@ const ServiceCard: React.FC = () => {
           <Slider {...settings}>
             {ServiceData.map((service) => (
               <div key={nanoid()} className="p-4">
-                <div className="flex flex-col items-center bg-white rounded-lg  p-6">
-                  <div className={`w-12 h-12 rounded-full ${service.bgColor} flex justify-center items-center`}>
+                <div className="flex flex-col items-center h-44 bg-white rounded-lg border border-gray-300 p-6 duration-300 hover:shadow-md">
+                  {/* Icon container with consistent size, color, and rounded shape */}
+                  <div className={`p-2 rounded-full flex justify-center items-center ${service.bgColor}`}>
                     {service.icon}
                   </div>
                   <h3 className="mt-4 text-lg font-semibold text-gray-800 text-center">
@@ -64,7 +65,6 @@ const ServiceCard: React.FC = () => {
             ))}
           </Slider>
         </div>
-
       </div>
     </section>
   );

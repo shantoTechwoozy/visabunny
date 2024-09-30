@@ -67,7 +67,7 @@ const countryFlags = [
 
 const SingleService = () => {
     return (
-        <div className="p-5 max-w-full mx-auto bg-white shadow-lg">
+        <div className="p-5 max-w-full bg-white shadow-lg mx-12 ">
             {/* Header Section with Blurry Background */}
             <div className="relative min-w-full h-64 md:h-[650px] overflow-hidden">
                 <Image
@@ -90,7 +90,7 @@ const SingleService = () => {
 
             <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 {services.map((service) => (
-                    <div key={nanoid()} className="bg-gray-100 rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
+                    <div key={nanoid()} className="bg-gray-200 rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 hover:shadow-lg duration-300">
                         <div className="text-4xl mb-4">{service.icon}</div>
                         <h3 className="text-xl font-semibold mb-2 text-black">{service.title}</h3>
                         <p className="text-gray-700">{service.description}</p>
@@ -101,7 +101,7 @@ const SingleService = () => {
             <section className="mb-8">
                 <h2 className="text-2xl font-semibold text-black mb-4">Unlock Study Opportunities In The USA!</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                    <div className="bg-gray-200 rounded-lg p-6 shadow-md">
                         <h3 className="text-xl font-semibold text-black mb-4">Discover Why Studying In The USA Offers Unparalleled Opportunities:</h3>
                         <ul className="list-disc text-slate-600 list-inside space-y-2">
                             <li className="flex items-center"><GiGraduateCap className="text-green-500 mr-2" />5-year multiple entry visa</li>
@@ -114,7 +114,7 @@ const SingleService = () => {
                         </ul>
                     </div>
 
-                    <div className="bg-gray-100 rounded-lg p-6 shadow-md">
+                    <div className="bg-gray-200 rounded-lg p-6 shadow-md">
                         <h3 className="text-xl font-semibold text-black mb-4">Our Services:</h3>
                         <ul className="list-disc text-slate-600 list-inside space-y-2">
                             <li className="flex items-center"><BiSupport className="text-blue-500 mr-2" />Support in finding part-time job opportunities.</li>
@@ -134,7 +134,7 @@ const SingleService = () => {
                 <h2 className="text-2xl font-semibold text-black mb-4">Available Visa Services by Country:</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {countryFlags.map(({ name, flag }) => (
-                        <div key={nanoid()} className="bg-gray-100 rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 hover:shadow-lg duration-300 flex items-center">
+                        <div key={nanoid()} className="bg-gray-200 rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 hover:shadow-lg duration-300 flex items-center">
                             <Image src={flag} alt={`${name} Flag`} width={50} height={35} className="mr-3" />
                             <h3 className="text-xl font-semibold text-black">{name}</h3>
                         </div>
