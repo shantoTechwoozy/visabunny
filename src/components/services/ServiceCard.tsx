@@ -8,7 +8,6 @@ import { ServiceData } from "./ServiceData";
 
 const ServiceCard: React.FC = () => {
   const settings = {
-    dots: true,
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -37,10 +36,10 @@ const ServiceCard: React.FC = () => {
     <section id="services" className="py-8 bg-white sm:py-10 lg:py-12 overflow-hidden">
       <div className="px-4 w-full sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl">
+          <h2 className="lg:text-3xl text-lg font-extrabold leading-tight text-gray-900 sm:text-4xl">
             Our Comprehensive Services
           </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-4 lg:text-lg text-sm text-gray-600 max-w-2xl mx-auto">
             Empowering your journey with our expert support and visa assistance.
           </p>
         </div>

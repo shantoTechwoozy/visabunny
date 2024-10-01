@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { visaServices, companyInfo, helpfulLinks, legalLinks, studentVisaServices1, studentVisaServices2 } from './footerData';
-import { FaPhoneAlt, FaMapMarkerAlt, FaGlobe, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaGlobe, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhoneAlt, FaTwitter } from 'react-icons/fa';
+import { companyInfo, legalLinks, studentVisaServices1, studentVisaServices2 } from './footerData';
 
 const FooterSection: React.FC<{ section: { title: string; links: { href: string; text: string }[] } }> = ({ section }) => (
     <div>

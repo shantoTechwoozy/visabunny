@@ -4,7 +4,9 @@ import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import Announcement from "@/components/header/Announcement";
+import LiveChat from "@/components/live-chat/LiveChat";
+import FBMessenger from "@/components/live-chat/FBMessenger";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,9 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ClerkProvider>
-          <Announcement />
+          <LiveChat />
           <Header />
           {children}
+          <FBMessenger />
           <Footer />
         </ClerkProvider>
       </body>
