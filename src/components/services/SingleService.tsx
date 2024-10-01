@@ -67,7 +67,7 @@ const countryFlags = [
 
 const SingleService = () => {
     return (
-        <div className="p-5 max-w-full bg-white shadow-lg mx-12 ">
+        <div className="p-5 max-w-full bg-white shadow-lg">
             {/* Header Section with Blurry Background */}
             <div className="relative min-w-full h-64 md:h-[650px] overflow-hidden">
                 <Image
